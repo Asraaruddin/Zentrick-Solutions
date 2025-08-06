@@ -51,109 +51,111 @@ const caseStudies = [
 
 const Success = () => {
   return (
-    <section className="w-full bg-white px-4 md:px-10 lg:px-16 py-12 md:py-16">
+    <section className="w-full bg-white overflow-hidden">
       {/* Stats Section */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-14">
-        {[
-          { value: '98%', label: 'Client Satisfaction Rate' },
-          { value: '150+', label: 'Successful Projects' },
-          { value: '40%', label: 'Average Cost Savings' },
-          { value: '99.9%', label: 'System Uptime' },
-        ].map((stat, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-blue-700">{stat.value}</h3>
-            <p className="text-gray-600 mt-2 text-sm md:text-base">{stat.label}</p>
-          </div>
-        ))}
-      </div>
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-14">
+          {[
+            { value: '98%', label: 'Client Satisfaction Rate' },
+            { value: '150+', label: 'Successful Projects' },
+            { value: '40%', label: 'Average Cost Savings' },
+            { value: '99.9%', label: 'System Uptime' },
+          ].map((stat, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <h3 className="text-3xl md:text-4xl font-bold text-blue-700">{stat.value}</h3>
+              <p className="text-gray-600 mt-2 text-sm md:text-base">{stat.label}</p>
+            </div>
+          ))}
+        </div>
 
-      {/* Heading */}
-      <div className="text-center mb-10 px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">What Our Clients Say</h2>
-        <p className="text-gray-500 max-w-2xl mx-auto mt-2 text-sm md:text-base">
-          Don't just take our word for it. Here's what our clients have to say about their experience with Zentrix Solutions.
-        </p>
-      </div>
+        {/* Heading */}
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">What Our Clients Say</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto mt-2 text-sm md:text-base">
+            Don't just take our word for it. Here's what our clients have to say about their experience with Zentrix Solutions.
+          </p>
+        </div>
 
-      {/* Testimonials */}
-      <div className="w-full overflow-x-auto pb-4">
-        <div className="flex gap-4 px-2">
-          {[1, 2, 3].map((_, i) => (
-            <div
-              key={i}
-              className="w-[250px] sm:w-[280px] bg-gray-100 p-5 rounded-lg shadow-md flex-shrink-0 flex flex-col justify-between"
-            >
-              <div>
-                <p className="text-gray-700 text-sm mb-3 leading-relaxed">
-                  "Zentrix Solutions transformed our entire IT infrastructure. Their cloud migration reduced our costs by 40% while improving performance. The team's expertise and dedication exceeded our expectations."
-                </p>
-                <div className="flex space-x-1 text-yellow-400 text-lg">
-                  {Array(5).fill('⭐️').map((star, index) => (
-                    <span key={index}>{star}</span>
-                  ))}
+        {/* Testimonials */}
+        <div className="w-full overflow-x-auto no-scrollbar pb-4">
+          <div className="flex gap-4 px-1 sm:px-2 w-fit mx-auto">
+            {[1, 2, 3].map((_, i) => (
+              <div
+                key={i}
+                className="w-[250px] sm:w-[280px] bg-gray-100 p-5 rounded-lg shadow-md flex-shrink-0 flex flex-col justify-between"
+              >
+                <div>
+                  <p className="text-gray-700 text-sm mb-3 leading-relaxed">
+                    "Zentrix Solutions transformed our entire IT infrastructure. Their cloud migration reduced our costs by 40% while improving performance. The team's expertise and dedication exceeded our expectations."
+                  </p>
+                  <div className="flex space-x-1 text-yellow-400 text-lg">
+                    {Array(5).fill('⭐️').map((star, index) => (
+                      <span key={index}>{star}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="border-t pt-2 mt-3">
+                  <h4 className="font-bold text-gray-800 text-sm">Jennifer Thompson</h4>
+                  <p className="text-sm text-[#33AFF9]">CTO, TechCorp Industries</p>
+                  <p className="text-xs text-gray-500 italic">Cloud Migration & Infrastructure Modernization</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
 
-              <div className="border-t pt-2 mt-3">
-                <h4 className="font-bold text-gray-800 text-sm">Jennifer Thompson</h4>
-                <p className="text-sm text-[#33AFF9]">CTO, TechCorp Industries</p>
-                <p className="text-xs text-gray-500 italic">Cloud Migration & Infrastructure Modernization</p>
+        {/* Case Studies */}
+        <div className="text-center mb-10 mt-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Detailed Case Studies</h2>
+          <p className="text-gray-500 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            Dive deeper into how we've solved complex challenges for our clients
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center gap-8">
+          {caseStudies.map((item, index) => (
+            <div
+              key={index}
+              className="w-full max-w-[1000px] border border-[#AEAEAE] rounded-lg shadow p-5 md:p-6"
+            >
+              <div className="flex flex-col md:flex-row justify-between gap-8">
+                {/* Left */}
+                <div className="flex-1 space-y-4">
+                  <div className="flex flex-col md:flex-row md:items-center gap-2">
+                    <h3 className="text-lg md:text-xl font-bold text-[#000000]">{item.title}</h3>
+                    <span className="text-sm text-gray-500">{item.domain}</span>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-gray-800">Challenge:</h4>
+                    <p className="text-sm text-gray-700">{item.challenge}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-gray-800">Solution:</h4>
+                    <p className="text-sm text-gray-700">{item.solution}</p>
+                  </div>
+                </div>
+
+                {/* Right */}
+                <div className="flex-1 text-left">
+                  <h4 className="font-semibold text-gray-800 mb-2">Result:</h4>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    {item.results.map((result, idx) => (
+                      <li key={idx}>{result}</li>
+                    ))}
+                  </ul>
+                  <div className="text-sm text-gray-600 mt-4">
+                    ⏳ Duration: <strong>{item.duration}</strong>
+                    <br />
+                    👥 Team: <strong>{item.team}</strong>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Case Studies */}
-      <div className="text-center mb-10 mt-16 px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Detailed Case Studies</h2>
-        <p className="text-gray-500 max-w-xl mx-auto mt-2 text-sm md:text-base">
-          Dive deeper into how we've solved complex challenges for our clients
-        </p>
-      </div>
-
-      <div className="flex flex-col items-center gap-8">
-        {caseStudies.map((item, index) => (
-          <div
-            key={index}
-            className="w-full max-w-[1000px] border border-[#AEAEAE] rounded-lg shadow p-5 md:p-6"
-          >
-            <div className="flex flex-col md:flex-row justify-between gap-8">
-              {/* Left */}
-              <div className="flex-1 space-y-4">
-                <div className="flex flex-col md:flex-row md:items-center gap-2">
-                  <h3 className="text-lg md:text-xl font-bold text-[#000000]">{item.title}</h3>
-                  <span className="text-sm text-gray-500">{item.domain}</span>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-gray-800">Challenge:</h4>
-                  <p className="text-sm text-gray-700">{item.challenge}</p>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-gray-800">Solution:</h4>
-                  <p className="text-sm text-gray-700">{item.solution}</p>
-                </div>
-              </div>
-
-              {/* Right */}
-              <div className="flex-1 text-left">
-                <h4 className="font-semibold text-gray-800 mb-2">Result:</h4>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                  {item.results.map((result, idx) => (
-                    <li key={idx}>{result}</li>
-                  ))}
-                </ul>
-                <div className="text-sm text-gray-600 mt-4">
-                  ⏳ Duration: <strong>{item.duration}</strong>
-                  <br />
-                  👥 Team: <strong>{item.team}</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* Final CTA */}
@@ -173,7 +175,10 @@ const Success = () => {
         </button>
       </div>
 
-      <Footer />
+      {/* Footer */}
+      <div className="w-full overflow-hidden">
+        <Footer />
+      </div>
     </section>
   );
 };
